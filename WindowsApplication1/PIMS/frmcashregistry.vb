@@ -142,7 +142,7 @@ NXT:
     End Sub
     Private Sub savetransaction()
         If Val(lbltransactionno.Text) = 0 Then MsgBox("press new to create new transaction", MsgBoxStyle.Information, "message") : Exit Sub
-        If Val(lblchange.Text) = 0 Then MsgBox("finish transaction first before print receipt", MsgBoxStyle.Information, "message") : Exit Sub
+        If Val(lblchange.Text) <> 0 Then MsgBox("finish transaction first before print receipt", MsgBoxStyle.Information, "message") : Exit Sub
        
         Try
             Dim s As Integer
@@ -302,7 +302,7 @@ NXT:
         Dim nctr, xpos, ii, iii As Integer
 
         e.Graphics.DrawString("BORA PHARMACY", New Font("Times New Roman", 12, FontStyle.Bold), Brushes.Blue, New Point(198, YAxis + 6))
-        e.Graphics.DrawString("7th Avenue Catballogan City, Samar", New Font("Times New Roman", 10, FontStyle.Bold), Brushes.Blue, New Point(140, YAxis + 22))
+        e.Graphics.DrawString("Bora Plaza, Eastleigh, Nairobi City", New Font("Times New Roman", 10, FontStyle.Bold), Brushes.Blue, New Point(140, YAxis + 22))
         e.Graphics.DrawString("TIN 005-057-119", New Font("Times New Roman", 10, FontStyle.Bold), Brushes.Blue, New Point(192, YAxis + 38))
         e.Graphics.DrawString("_________________________________________________________", New Font("Times New Roman", 12), Brushes.Blue, New Point(5, YAxis + 50))
         e.Graphics.DrawString("_________________________________________________________", New Font("Times New Roman", 12), Brushes.Blue, New Point(5, YAxis + 75))
